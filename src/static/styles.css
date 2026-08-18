@@ -57,12 +57,35 @@ section h3 {
   color: #1a237e;
 }
 
+.refresh-status {
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: #e8f0ff;
+  border: 1px solid #ccdcff;
+  color: #1a237e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#activities-list.is-refreshing {
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
+}
+
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  border: 1px solid #d6ddf5;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  box-shadow: 0 8px 18px rgba(26, 35, 126, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(26, 35, 126, 0.12);
 }
 
 .activity-card h4 {
@@ -72,6 +95,74 @@ section h3 {
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.participants-section {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #eef3ff;
+  border: 1px solid #d5e0ff;
+}
+
+.participants-heading {
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.participants-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.participants-list li {
+  margin-bottom: 6px;
+  color: #25304b;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.participants-list li:last-child {
+  margin-bottom: 0;
+}
+
+.participants-empty {
+  color: #5c6c96;
+  font-style: italic;
+}
+
+.participant-email {
+  flex: 1;
+}
+
+.remove-participant-button {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid #f2b8bc;
+  background-color: #fff2f4;
+  color: #b4232a;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.remove-participant-button:hover {
+  background-color: #ffdfe3;
+  transform: scale(1.08);
+}
+
+.remove-participant-button:focus-visible {
+  outline: 2px solid #b4232a;
+  outline-offset: 2px;
 }
 
 .form-group {
@@ -106,6 +197,11 @@ button {
 
 button:hover {
   background-color: #3949ab;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .message {
