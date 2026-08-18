@@ -31,6 +31,39 @@ A super simple FastAPI application that allows students to view and sign up for 
 | ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Get all activities with their details and current participant count |
 | POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
+| DELETE | `/activities/{activity_name}/signup?email=student@mergington.edu` | Unregister a student from an activity                               |
+
+## Backend Tests
+
+Backend API tests live in a separate top-level `tests/` directory and use `pytest`.
+
+Run these commands from the repository root.
+
+1. Install dependencies:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+2. Run all backend tests:
+
+   ```
+   pytest tests/ -v
+   ```
+
+3. Run focused mutation tests:
+
+   ```
+   pytest tests/ -k "signup or unregister" -v
+   ```
+
+### AAA Pattern
+
+All tests follow the Arrange-Act-Assert structure with explicit section comments:
+
+- `# Arrange`: setup, fixtures, and preconditions
+- `# Act`: single primary API action
+- `# Assert`: status code, payload, and side-effect checks
 
 ## Data Model
 
